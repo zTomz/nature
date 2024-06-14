@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:nature/features/waterfall/presentation/pages/intro_page.dart';
+import 'package:mix/mix.dart';
+import 'package:nature/core/config/theme/app_theme.dart';
+import 'package:nature/features/niagara_falls/presentation/pages/niagara_falls_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,12 +33,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Nature",
-      theme: ThemeData(
-        textTheme: GoogleFonts.interTextTheme(),
+    return MixTheme(
+      data: appTheme,
+      child: const MaterialApp(
+        title: "Nature",
+        home: NiagaraFallsPage(),
       ),
-      home: const IntroPage(),
     );
   }
 }
