@@ -3,8 +3,8 @@ import 'package:mix/mix.dart';
 import 'package:nature/core/config/theme/colors.dart';
 import 'package:nature/core/config/theme/text_styles.dart';
 
-class IntroWidget extends StatelessWidget {
-  const IntroWidget({super.key});
+class IntroSection extends StatelessWidget {
+  const IntroSection({super.key});
 
   @override
   Widget build(BuildContext context) {

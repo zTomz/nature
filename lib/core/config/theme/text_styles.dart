@@ -21,18 +21,18 @@ final Map<TextStyleToken, TextStyle> kTextStyles = {
   ),
   $token.textStyle.subTitle: const TextStyle(
     fontFamily: _titleFontName,
-    fontSize: 30,
+    fontSize: 35,
     height: 1.2,
     letterSpacing: 5,
     color: Colors.white,
   ),
   $token.textStyle.body: GoogleFonts.inter(
-    fontSize: 16,
-    height: 1.65,
+    fontSize: 18,
+    height: 1.5,
     color: Colors.white,
   ),
   $token.textStyle.bodySmall: GoogleFonts.inter(
-    fontSize: 12,
+    fontSize: 14,
     color: Colors.white,
   ),
 };
