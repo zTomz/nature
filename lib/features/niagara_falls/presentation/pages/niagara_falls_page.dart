@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
 import 'package:nature/core/config/theme/colors.dart';
 import 'package:nature/core/config/theme/text_styles.dart';
+import 'package:nature/features/niagara_falls/presentation/widgets/intro_widget.dart';
 
 class NiagaraFallsPage extends StatelessWidget {
   const NiagaraFallsPage({
@@ -11,93 +12,11 @@ class NiagaraFallsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: StyledImage(
-              style: Style(
-                $image.fit.cover(),
-              ),
-              image: const AssetImage(
-                'assets/images/niagara_falls/niagara_falls.png',
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            child: Box(
-              style: Style(
-                $box.width(MediaQuery.sizeOf(context).width),
-                $box.height(MediaQuery.sizeOf(context).height * 0.5),
-                $box.linearGradient(
-                  colors: [
-                    Colors.black,
-                    Colors.transparent,
-                  ],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                ),
-              ),
-            ),
-          ),
-          Positioned.fill(
-            child: Box(
-              style: Style(
-                $box.width(MediaQuery.sizeOf(context).width),
-                $box.padding.horizontal.ref($token.space.medium),
-              ),
-              child: ListView(
-                children: [
-                  Box(
-                    style: Style(
-                      $box.height(
-                        MediaQuery.sizeOf(context).height -
-                            MediaQuery.viewPaddingOf(context).vertical,
-                      ),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        StyledText(
-                          "Niagara Falls",
-                          style: Style(
-                            $text.style.ref($token.textStyle.title),
-                            $text.textAlign.center(),
-                          ),
-                        ),
-                        SizedBox(
-                          height: $token.space.small.resolve(context),
-                        ),
-                        StyledText(
-                          "“Their roar is around me. I am on the brink Of the great waters—and their anthem voice Goes up amid the rainbow and the mist.”",
-                          style: Style(
-                            $text.style.ref($token.textStyle.body),
-                            $text.textAlign.center(),
-                          ),
-                        ),
-                        Box(
-                          style: Style(
-                            $box.color.ref($token.color.onSurface),
-                            $box.height(1.5),
-                            $box.margin.vertical.ref($token.space.small),
-                            $box.borderRadius.all.ref($token.radius.large),
-                            $box.width(200),
-                          ),
-                        ),
-                        StyledText(
-                          "— Grenville Mellen",
-                          style: Style(
-                            $text.style.ref($token.textStyle.bodySmall),
-                            $text.textAlign.center(),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+      backgroundColor: $token.color.surface.resolve(context),
+      body: ListView(
+        padding: EdgeInsets.zero,
+        children: const [
+          IntroWidget(),
         ],
       ),
     );
